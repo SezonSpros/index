@@ -33,7 +33,17 @@ var slider = new Slider();
 $('.more-info').on('click', function(e){
     e.preventDefault();
     $('html, body').animate({scrollTop:$('header').height()}, 'slow');
-}); 
+});
+
+$('.info').on('click', function(e){
+    e.preventDefault();
+    $('html, body').animate({scrollTop:$('header').height()}, 'slow');
+});
+
+$('.connect').on('click', function(e){
+    e.preventDefault();
+    $('html, body').animate({scrollTop:$('.feedback-form').offset().top}, 'slow');
+});
 
 $('.menu-toggle-button').on('click', function(){
     $('body').toggleClass('open-menu');
