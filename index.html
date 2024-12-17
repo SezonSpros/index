@@ -127,9 +127,17 @@
             <li>Анализирейте товар и получайте вашу первую прибыль.</li>
         </ul>
         <div class="center">
-            <a style="margin:20px 0 0;" href class="button round">Попробуйте прямо сейчас!</a>
+            <a style="margin:20px 0 0; position: relative; left: -12%;" class="button round" >Попробуйте прямо сейчас!</a>
         </div>
-    </div>                </div>
+    </div>
+</div>
+<div class="feedback-form">
+    <h2>Обратная связь</h2>
+    <input type="text" id="name" placeholder="Ваше имя" required>
+    <textarea id="message" placeholder="Ваше сообщение" required></textarea>
+    <input type="text" id="email" placeholder="Адрес электронной почты" required>
+    <button onclick="sendFeedback()">Отправить</button>
+</div>
             </main>
             <footer>
                 <div class="wrapper clear-fix">
@@ -168,7 +176,7 @@
 	                        <h3>СезонСпрос</h3>
 	                        Изучение исторических данных о продажах <br>
 	                        товарных категорий в зависимости от сезона.<br><br>
-	                        Напишите нам: <a href>admin@ananaspros.org</a><br>
+	                        Напишите нам: <a href>admin@sezonspros.org</a><br>
 	                        <a hre>СезонСпрос</a> © 2024	                    </div>
 	                </div>
 	                <div class="pay-system-images">
@@ -177,19 +185,12 @@
                         <img src="./files/mir.svg" alt="">
                         <img src="./files/paykeeper.svg" alt="">
                         <img src="./files/qiwi.svg" alt="">
-<!--                         <img src="/statics/images/yoomoney.svg" alt=""> -->
                         <img src="./files/webmoney.svg" alt="">
                         <img src="./files/beeline.svg" alt="">
                         <img src="./files/tele2.svg" alt="">
                         <img src="./files/mts.svg" alt="">
                         <img src="./files/megafon.svg" alt="">
                         <img src="./files/sbp.svg" alt="">
-<!--
-                        <img src="/statics/images/alfabank.svg" alt="">
-                        <img src="/statics/images/vtb.svg" alt="">
-                        <img src="/statics/images/psb.svg" alt="">
-                        <img src="/statics/images/russky_standart.svg" alt="">
--->
                         
                     </div>
                     <!--noindex-->
@@ -207,4 +208,48 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/28416256" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <script src="./files/jquery-3.1.1.min.js"></script>
         <script src="./files/script.js"></script>
-</body></html>
+</body>
+
+<style>
+    .feedback-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .feedback-form input, .feedback-form textarea {
+        width: 98%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .feedback-form button {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+</style>
+
+<script>
+    function sendFeedback() {
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+        const email = document.getElementById('email').value;
+        
+        if (name && message && email) {
+            alert(`Спасибо, ${name}! Ваше сообщение отправлено.`);
+            // Здесь можно добавить функционал для отправки данных на сервер
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+            document.getElementById('email').value = '';
+        } else {
+            alert('Пожалуйста, заполните все поля.');
+        }
+    }
+</script>
+</html>
